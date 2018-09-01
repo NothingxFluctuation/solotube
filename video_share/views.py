@@ -26,7 +26,7 @@ def index(request):
 
 def media_detail(request, pk):
 	media_object = Media.objects.get(pk=pk)
-	comments = Comment.objects.filter(media=media_object)
+	comments = Comment.objects.filter(media=media_object).order_by('pub_date')
 	context = {'file': media_object.file, 'description': media_object.description, 'form': CommentForm, 'comments': comments}
 	return render(request, 'video_share/media_detail.html', context)
 

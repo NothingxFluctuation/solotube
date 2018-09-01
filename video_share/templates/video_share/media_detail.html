@@ -17,10 +17,11 @@
 				<h4>Comments</h4>
 				<ul>
 				{% for comment in comments %}
-					<li>{{ comment.author }}: {{ comment.content }}</li>
+					<hr>
+					<li>{{ comment.pub_date.time }} - {{ comment.author }} <p>{{ comment.content }}</p></li><hr>
 				{% endfor %}
 				</ul>
-				<a href="post-comment">Post a Comment</a>
+				<a href="post-comment"><button type="button">Post a Comment</button></a>
 			</div>
 	</div>
 	</body>
