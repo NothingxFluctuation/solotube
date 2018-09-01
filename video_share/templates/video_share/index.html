@@ -16,14 +16,15 @@
 			</div>
 			<div class="content">
 				<h3>Activity</h3>
-				<ul>
+				<ul class="activity-list">
 					{% for item in activity %}
 						{% if item.comment %}
-							<li>{{ item.pub_time }} - {{ item.author }} posted a comment. <a href="/media/{{ item.pk }}/view"><button type="button">Read</button></a></li>
+							<li>{{ item.pub_time }} - <a href="/media/{{ item.pk }}/view"> {{ item.author }} posted a comment.</a>
+							</li>
 						{% endif %}
 
 						{% if item.video %}
-							<li>{{ item.pub_time }} - A video has been uploaded. <a href="/media/{{ item.pk }}/view"><button type="button">Watch</button></a></li>
+							<li>{{ item.pub_time }} - <a href="/media/{{ item.pk }}/view">A video has been uploaded.</a></li>
 						{% endif %}
 
 					{% endfor %}
