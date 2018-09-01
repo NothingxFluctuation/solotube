@@ -7,4 +7,5 @@ Lightweight, mobile-optimized video sharing web application designed for single-
 * Validate uploaded files for security
 * Add photo sharing functionality
 * Move comment form to video detail page
-* use ajax to update 
+* use ajax to update activity list
+* add breakpoint at approx 400px to modify activity list.
