@@ -34,6 +34,7 @@ def upload_media(request):
 		form = MediaUploadForm(request.POST, request.FILES)
 
 		if form.is_valid():
+			print "form is valid"
 			media_record = Media(**form.cleaned_data)
 			media_record.save()
 			return HttpResponseRedirect('/')
