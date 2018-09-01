@@ -1,0 +1,57 @@
+.container {
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+}
+
+.banner {
+	background-color: blue;
+	color: white;
+	text-align: right;
+}
+
+.nav {
+	text-align: center;
+}
+
+.nav button {
+	background-color: orange;
+	color: black;
+	font-weight: bold;
+	font-size: large; 
+	padding: 10px;
+}
+
+.content {
+	width: 90%;
+	margin: auto;
+	height: 100vh;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+h1 {
+	padding: 5px 10px 5px 0px;
+}
+
+button {
+	background-color: blue;
+	color: white;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 5px;
+	cursor: pointer;
+	box-shadow: 5px 5px 5px grey;
+}
+
+button a {
+	color: white;
+	text-decoration: none;
+}
+
+button a:visited {
+	color: yellow;
+}

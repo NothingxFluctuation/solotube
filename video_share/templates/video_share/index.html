@@ -1,24 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'video_share/main.css' %}">
+
 <html lang="en-us">
 	<head>
 		<title>SoloTUBE</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	</head>
 	<body>
-		<h1>SoloTUBE</h1>
-		<nav>
-			<a href="/media/upload">Upload a Video</a> 
-		</nav>
-		<h3>Activity</h3>
-		<ul>
-			{% for item in activity %}
-				{% if item.comment %}
-					<li>{{ item.author }} posted a comment. <button><a href="/media/{{ item.pk }}/view">Read</a></button></li>
-				{% endif %}
+		<div class="container">
+			<div class="banner">
+				<h1>SoloTUBE</h1>
+			</div>
+			<div class="nav">
+				<a href="/media/upload"><button type="button">Upload a Video</button></a>
+			</div>
+			<div class="content">
+				<h3>Activity</h3>
+				<ul>
+					{% for item in activity %}
+						{% if item.comment %}
+							<li>{{ item.author }} posted a comment. <a href="/media/{{ item.pk }}/view"><button type="button">Read</button></a></li>
+						{% endif %}
 
-				{% if item.video %}
-					<li>A video has been uploaded. <button><a href="/media/{{ item.pk }}/view">Watch</a></button></li>
-				{% endif %}
+						{% if item.video %}
+							<li>A video has been uploaded. <a href="/media/{{ item.pk }}/view"><button type="button">Watch</button></a></li>
+						{% endif %}
 
-			{% endfor %}
-		</ul>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>
