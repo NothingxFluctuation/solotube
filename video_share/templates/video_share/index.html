@@ -5,7 +5,6 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'video_share/main.css' %}">
 		<title>SoloTUBE</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	</head>
 	<body>
 		<div class="container">
@@ -20,11 +19,11 @@
 				<ul>
 					{% for item in activity %}
 						{% if item.comment %}
-							<li>{{ item.author }} posted a comment. <a href="/media/{{ item.pk }}/view"><button type="button">Read</button></a></li>
+							<li>{{ item.pub_time }} - {{ item.author }} posted a comment. <a href="/media/{{ item.pk }}/view"><button type="button">Read</button></a></li>
 						{% endif %}
 
 						{% if item.video %}
-							<li>A video has been uploaded. <a href="/media/{{ item.pk }}/view"><button type="button">Watch</button></a></li>
+							<li>{{ item.pub_time }} - A video has been uploaded. <a href="/media/{{ item.pk }}/view"><button type="button">Watch</button></a></li>
 						{% endif %}
 
 					{% endfor %}

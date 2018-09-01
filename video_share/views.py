@@ -14,12 +14,13 @@ def index(request):
 	media_activity = Media.objects.all().order_by('-pub_date')
 	comment_activity = Comment.objects.all().order_by('-pub_date')
 	activity = sorted(chain(media_activity, comment_activity), key=attrgetter('pub_date'))
+	activity.reverse()
 	activities = []
 	for event in activity:
 		if event.__class__.__name__ == 'Comment':
-			activities.append({'comment':True, 'author': event.author, 'pk': event.media.pk})
+			activities.append({'comment':True, 'author': event.author, 'pk': event.media.pk, 'pub_time': event.pub_date.time})
 		elif event.__class__.__name__ == 'Media':
-			activities.append({'video':True, 'author': 'Somebody', 'pk': event.pk})
+			activities.append({'video':True, 'author': 'Somebody', 'pk': event.pk, 'pub_time': event.pub_date.time})
 
 	return render(request, 'video_share/index.html', {'activity': activities})
 
