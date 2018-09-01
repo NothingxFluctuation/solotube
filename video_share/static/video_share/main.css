@@ -1,14 +1,21 @@
 .container {
 	width: 100%;
-	max-width: 800px;
 	margin: auto;
 }
 
 .banner {
-	background-color: blue;
+	background-color: black;
 	color: white;
 	text-align: right;
 }
+
+.banner a:link {
+	color: white;
+	text-decoration: none;
+}
+.banner a:visited { color: white; }
+.banner a:hover { color: white; }
+.banner a:active { color: white; }
 
 .nav {
 	text-align: center;
@@ -26,6 +33,10 @@
 	width: 90%;
 	margin: auto;
 	height: 100vh;
+}
+
+video {
+	width: 100%;
 }
 
 ul {

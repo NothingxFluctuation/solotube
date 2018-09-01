@@ -16,7 +16,6 @@ def index(request):
 	activity = sorted(chain(media_activity, comment_activity), key=attrgetter('pub_date'))
 	activities = []
 	for event in activity:
-		print event.__class__.__name__
 		if event.__class__.__name__ == 'Comment':
 			activities.append({'comment':True, 'author': event.author, 'pk': event.media.pk})
 		elif event.__class__.__name__ == 'Media':
