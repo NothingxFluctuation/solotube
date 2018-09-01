@@ -1,0 +1,16 @@
+<html lang="en-us">
+	<head>
+		<title>Media Detail Page</title>
+	</head>
+	<body>
+		<a href="/"><h1>SoloTUBE</h1></a>
+		<h3>{{ description }}</h3>
+		<video src="{{ file.url }}" width="300" height="200" controls></video>
+		<ul>
+		{% for comment in comments %}
+			<li>{{ comment.author }}: {{ comment.content }}</li>
+		{% endfor %}
+		</ul>
+		<a href="post-comment">Post a Comment</a>
+	</body>
+</html>

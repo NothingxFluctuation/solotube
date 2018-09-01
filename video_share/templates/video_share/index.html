@@ -1,0 +1,24 @@
+<html lang="en-us">
+	<head>
+		<title>SoloTUBE</title>
+	</head>
+	<body>
+		<h1>SoloTUBE</h1>
+		<nav>
+			<a href="/media/upload">Upload a Video</a> 
+		</nav>
+		<h3>Activity</h3>
+		<ul>
+			{% for item in activity %}
+				{% if item.comment %}
+					<li>{{ item.author }} posted a comment. <button><a href="/media/{{ item.pk }}/view">Read</a></button></li>
+				{% endif %}
+
+				{% if item.video %}
+					<li>A video has been uploaded. <button><a href="/media/{{ item.pk }}/view">Watch</a></button></li>
+				{% endif %}
+
+			{% endfor %}
+		</ul>
+	</body>
+</html>

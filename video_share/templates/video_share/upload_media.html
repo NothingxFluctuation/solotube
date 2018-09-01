@@ -1,0 +1,13 @@
+<html lang="en-us">
+	<head>
+		<title>SoloTUBE | Upload a video</title>
+	</head>
+	<body>
+		<a href="/"><h1>SoloTUBE</h1></a>
+		<form action="/media/upload" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Upload"></input>
+		</form>
+	</body>
+</html>
