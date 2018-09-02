@@ -51,7 +51,7 @@ def post_comment(request, pk):
 		if form.is_valid():
 			comment_record = Comment.objects.create(media=Media.objects.get(pk=pk), **form.cleaned_data)
 			comment_record.save()
-			return HttpResponseRedirect('media/'+ pk +'/view')
+			return HttpResponseRedirect('/media/'+ pk +'/view')
 	else:
 		form = CommentForm()
 
