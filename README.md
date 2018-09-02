@@ -8,3 +8,6 @@ Lightweight, mobile-optimized video sharing web application designed for single-
 * Add photo sharing functionality
 * Move comment form to video detail page
 * use ajax to update activity list
+* fix ugly activity list code
+* refactor templates to use blocks
+* figure out deployment
