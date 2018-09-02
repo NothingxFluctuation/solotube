@@ -1,23 +1,9 @@
-{% load static %}
+{% extends 'video_share/base.html' %}
 
-<html lang="en-us">
-	<head>
-		<link rel="stylesheet" type="text/css" href="{% static 'video_share/main.css' %}">
-		<title>SoloTUBE | Upload a Video</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-	<body>
-		<div class="container">
-			<div class="banner">
-				<a href="/"><h1>SoloTUBE</h1></a>
-			</div>
-			<div class="content">
-				<form action="/media/upload" method="post" enctype="multipart/form-data">
-					{% csrf_token %}
-					{{ form.as_p }}
-					<input type="submit" value="Upload"></input>
-				</form>
-			</div>
-		</div>
-	</body>
-</html>
+{% block content %}
+	<form action="/media/upload" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Upload"></input>
+	</form>
+{% endblock %}

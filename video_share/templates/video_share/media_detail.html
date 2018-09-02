@@ -1,28 +1,15 @@
-{% load static %}
+{% extends 'video_share/base.html' %}
 
-<html lang="en-us">
-	<head>
-		<link rel="stylesheet" type="text/css" href="{% static 'video_share/main.css' %}">
-		<title>SoloTUBE | Video Detail</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-	<body>
-		<div class="container">
-			<div class="banner">
-				<a href="/"><h1>SoloTUBE</h1></a>
-			</div>
-			<div class="content">
-				<h3>{{ description }}</h3>
-				<video src="{{ file.url }}" controls></video>
-				<h4>Comments</h4>
-				<ul>
-				{% for comment in comments %}
-					<hr>
-					<li>{{ comment.pub_date.time }} - {{ comment.author }} <p>{{ comment.content }}</p></li><hr>
-				{% endfor %}
-				</ul>
-				<a href="post-comment"><button type="button">Post a Comment</button></a>
-			</div>
-	</div>
-	</body>
-</html>
+{% block content %}
+
+	<h3>{{ description }}</h3>
+	<video src="{{ file.url }}" controls></video>
+	<h4>Comments</h4>
+	<ul>
+		{% for comment in comments %}
+			<hr>
+			<li>{{ comment.pub_date.time }} - {{ comment.author }} <p>{{ comment.content }}</p></li><hr>
+		{% endfor %}
+	</ul>
+		<a href="post-comment"><button type="button">Post a Comment</button></a>
+{% endblock %}

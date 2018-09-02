@@ -1,35 +1,21 @@
-{% load static %}
+{% extends 'video_share/base.html' %}
 
-<html lang="en-us">
-	<head>
-		<link rel="stylesheet" type="text/css" href="{% static 'video_share/main.css' %}">
-		<title>SoloTUBE</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-	<body>
-		<div class="container">
-			<div class="banner">
-				<h1>SoloTUBE</h1>
-			</div>
-			<div class="nav">
-				<a href="/media/upload"><button type="button">Upload a Video</button></a>
-			</div>
-			<div class="content">
-				<h3>Activity</h3>
-				<ul class="activity-list">
-					{% for item in activity %}
-						{% if item.comment %}
-							<li>{{ item.pub_time }} - <a href="/media/{{ item.pk }}/view"> {{ item.author }} posted a comment.</a>
-							</li>
-						{% endif %}
+{% block content %}
+	<div class="nav">
+		<a href="/media/upload"><button type="button">Upload a Video</button></a>
+	</div>
+		<h3>Activity</h3>
+		<ul class="activity-list">
+			{% for item in activity %}
+				{% if item.comment %}
+					<li>{{ item.pub_time }} - <a href="/media/{{ item.pk }}/view"> {{ item.author }} posted a comment.</a>
+					</li>
+				{% endif %}
 
-						{% if item.video %}
-							<li>{{ item.pub_time }} - <a href="/media/{{ item.pk }}/view">A video has been uploaded.</a></li>
-						{% endif %}
+				{% if item.video %}
+					<li>{{ item.pub_time }} - <a href="/media/{{ item.pk }}/view">A video has been uploaded.</a></li>
+				{% endif %}
 
-					{% endfor %}
-				</ul>
-			</div>
-		</div>
-	</body>
-</html>
+			{% endfor %}
+		</ul>
+{% endblock %}
